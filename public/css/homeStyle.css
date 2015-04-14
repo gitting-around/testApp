@@ -1,0 +1,78 @@
+
+body{
+    background-image: url("/css/images/photo5.png");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+
+}
+
+.videos {
+    background: transparent;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    margin-left: 30px;
+    margin-bottom: 30px;
+    height: 100%;
+    width: 100%;
+}
+
+.green {
+    background-image: url("/css/images/photo1.png");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-left: 30px;
+    margin-bottom: 30px;
+    height: 60%;
+    width: 100%;
+}
+
+.donate {
+    background-image: url("/css/images/photo4.png");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 30px;
+    margin-left: 30px;
+    height: 60%;
+    width: 100%;
+}
+
+.newsfeed {
+    background-image: url("/css/images/photo3.png");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-left: 30px;
+    margin-bottom: 30px;
+    height: 60%;
+    width: 100%;
+}
+
+.about{
+    background-image: url("/css/images/about.png");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    margin-left: 30px;
+    margin-bottom: 30px;
+    height: 60%;
+    width: 100%;
+}
+
+.contact {
+    background-image: url("/css/images/photography.png");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    margin-left: 30px;
+    height: 60%;
+    width: 100%;
+}
