@@ -19,7 +19,7 @@ class CreateVideosTable extends Migration
             $table->string('author', 50);
             $table->string('image_url', 50);
             $table->string('video_url', 50);
-            $table->boolean('format_film');
+            $table->string('format_film', 20);
             $table->timestamp('published_at');
             $table->timestamps();
         });

@@ -1,37 +1,37 @@
 @extends('appPlus')
 
-@section('content')
+    @section('gjera')
 
-<style>
+    <title>Our Works</title>
+    <link href="{{ asset('css/videoLinkStyle6.css') }}" rel="stylesheet" type="text/css" >
 
+    <section class="row text-center">
 
+    <ul class="ch-grid">
 
-</style>
+            @foreach($vids as $vid)
 
-<title>Our Works</title>
-<link href="{{ asset('css/videoLinkStyle2.css') }}" rel="stylesheet" type="text/css" >
+                <li>
+                    <div class="ch-item ch-img-1">
 
-<ul class="ch-grid">
+                        <div class="ch-info">
+                            <h3>{{$vid->title}}</h3>
+                            <p>{{$vid->author}}</p>
 
-    @foreach($vids as $vid)
+                            <p>{!! HTML::link("{{$vid->video_url}}", "View Video")  !!}</p>
 
-        <li>
-            <div class="ch-item ch-img-1">
+                        </div>
+                    </div>
+                </li>
 
-                <div class="ch-info">
-                    <h3>{{$vid->title}}</h3>
-                    <p>{{$vid->author}}</p>
+            @endforeach
 
-                    <hr style="width: 20%">
+    </ul>
 
-                    <p>{!! HTML::link("{{$vid->image_url}}", "View Video")  !!}</p>
+    <div>
+        {!! $vids->render() !!}
+    </div>
 
-                </div>
-            </div>
-        </li>
-
-    @endforeach
-
-</ul>
+    </section>
 
 @stop

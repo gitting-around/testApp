@@ -10,6 +10,9 @@ class Video extends Model
         'title',
         'description',
         'author',
+        'image_url',
+        'video_url',
+        'format_film',
         'published_at'
     ];
 }

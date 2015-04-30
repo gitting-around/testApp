@@ -3,6 +3,8 @@
 use App\Newsfeed;
 use App\Project;
 use App\Video;
+use App\Http\Requests\ContactFormRequest;
+
 
 class HomeController extends Controller
 {
@@ -19,9 +21,10 @@ class HomeController extends Controller
 
     public function index()
     {
-        $news = Newsfeed::all();
+        $news = Newsfeed::paginate(10);
         $green = Project::all();
-        return view('home')->with('news', $news)->with('green', $green);
+        $vids = Video::all();
+        return view('home')->with('news', $news)->with('green', $green)->with('vids', $vids);
     }
 
     public function about()
@@ -31,13 +34,26 @@ class HomeController extends Controller
 
     public function works()
     {
-        $vids = Video::all();
+        $vids = Video::paginate(10);
         return view("works")->with('vids', $vids);
     }
 
-    public function contact()
+    public function contact(ContactFormRequest $request)
     {
-        return view("contact");
+        \Mail::send('contact-email',
+            array(
+                'name' => $request->get('name'),
+                'email' => $request->get('email'),
+                'user_message' => $request->get('message')
+            ), function($message)
+            {
+                $message->from('wj@wjgilmore.com');
+                $message->to('wj@wjgilmore.com', 'Admin')->subject('TODOParrot Feedback');
+            });
+
+        return \Redirect::to('home#contact')
+            ->with('message', 'Thanks for contacting us!');
+
     }
 
     public function donate()
@@ -47,7 +63,9 @@ class HomeController extends Controller
 
     public function newsfeed()
     {
-        return view("newsfeed");
+        $newsfed = Newsfeed::paginate(10);
+
+        return view("newsfeed")->with('newsfed', $newsfed);
     }
 
     public function green()

@@ -2,63 +2,23 @@
 
     <body>
 
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">Login</div>
-                        <div class="panel-body">
-                            @if (count($errors) > 0)
-                                <div class="alert alert-danger">
-                                    <strong>Whoops!</strong> There were some problems with your input.<br><br>
-                                    <ul>
-                                        @foreach ($errors->all() as $error)
-                                            <li>{{ $error }}</li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-                            @endif
-
-                            <form class="form-horizontal" role="form" method="POST" action="{{ url('/admin/admin') }}">
-                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-
-                                <div class="form-group">
-                                    <label for="email" class="col-md-4 control-label">E-Mail Address</label>
-                                    <div class="col-md-6">
-                                        <input type="email" class="form-control" name="email" id="email" value="{{ old('email') }}">
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="password" class="col-md-4 control-label">Password</label>
-                                    <div class="col-md-6">
-                                        <input type="password" class="form-control" name="password" id="password">
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="col-md-6 col-md-offset-4">
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox" name="remember"> Remember Me
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="col-md-6 col-md-offset-4">
-                                        <button type="submit" class="btn btn-primary">Login</button>
-
-                                        <a class="btn btn-link" href="{{ url('/password/email') }}">Forgot Your Password?</a>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        {!! Form::open(array('url' => 'admin')) !!}
+        <h1>Login</h1>
+        @if(Session::has('error'))
+        <div class="alert-box success">
+          <h2>{{ Session::get('error') }}</h2>
         </div>
+        @endif
+        <div class="controls">
+        {!! Form::text('email','',array('id'=>'','class'=>'form-control span6','placeholder' => 'Please Enter your Email')) !!}
+        <p class="errors">{{$errors->first('email')}}</p>
+        </div>
+        <div class="controls">
+        {!! Form::password('password',array('class'=>'form-control span6', 'placeholder' => 'Please Enter your Password')) !!}
+        <p class="errors">{{$errors->first('password')}}</p>
+        </div>
+        <p>{!! Form::submit('Login', array('class'=>'send-btn')) !!}</p>
+        {!! Form::close() !!}
 
 
     </body>

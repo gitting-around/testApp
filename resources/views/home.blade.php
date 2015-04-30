@@ -1,462 +1,247 @@
 @extends('app')
 
-    @section('content')
+    @section('gjera')
 
-             <title>Home Page</title>
+            <title>Home Page</title>
 
-             <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+            <section class="videos" id="videos">
+                <div class="container-fluid">
 
-             <link href="{{ asset('css/homeStyle.css') }}" rel="stylesheet" type="text/css" >
-
-              <article class = 'videos' id = 'videos'>
-
-               <link href="{{ asset('css/videoLinkStyle2.css') }}" rel="stylesheet" type="text/css" >
-
-               <ul class="ch-grid">
-                   <li>
-                       <div class="ch-item ch-img-1">
-                           <div class="ch-info">
-                               <h3>To Have and Have Not </h3>
-                               <p>by E. Hemingway</p>
-                               <hr style="width: 40%">
-                               <p>{!! HTML::link("videos/vid1.mp4", "View Video")  !!}</p>
-
-                           </div>
-                       </div>
-                   </li>
-                   <li>
-                       <div class="ch-item ch-img-2">
-                           <div class="ch-info">
-                               <h3>Got the Blues</h3>
-                               <p>by Harper Lee</p>
-                               <hr style="width: 40%">
-                               <p><a href="/videos/vid2.mp4">View Video</a></p>
-                           </div>
-                       </div>
-                   </li>
-                   <li>
-                       <div class="ch-item ch-img-3">
-                           <div class="ch-info">
-                               <h3>Death on the Nile</h3>
-                               <hr style="width: 40%">
-                               <p>by A. Christie <a href="/videos/vid3.mp4">View Video</a></p>
-                           </div>
-                       </div>
-                   </li>
-               </ul>
-
-               <style>
-
-                    .home1 a {
-                        background-color: transparent;
-                        align-self: right;
-                        display: inline-block;
-                        height: 32px;
-                        width: 54px;
-                        background-image: url("/css/images/down.png");
-                    }
-
-                    .home1 a:hover {
-                        background-color: lightcyan;
-                        opacity: 0.6;
-                    }
-
-                    .home1 ul {
-                        display: inline-block;
-                        text-align: center;
-                        vertical-align: text-bottom;
-                    }
-
-                    .home1 li {
-                        display: block;
-                        margin: 1px;
-                    }
-
-               </style>
-
-               <div  class="home1">
-                    <ul>
-                        <li>
-                            <a style="background-image: none; color: deepskyblue;font-weight: bold "  href="works"> More </a>
-                        </li>
-                        <li>
-                            <a href="#green"></a>
-                        </li>
-                    </ul>
-               </div>
-
-             </article>
-
-              <article class = 'green' id="green">
-                <style>
-
-                                  .home2 a {
-                                      background-color: transparent;
-                                      align-self: right;
-                                      display: inline-block;
-                                      height: 32px;
-                                      width: 54px;
-                                      background-image: url("/css/images/up.png");
-                                  }
-
-                                  .home2 a:hover {
-                                      background-color: lightcyan;
-                                      opacity: 0.6;
-                                  }
-
-                                  .home2 ul {
-                                      display: inline-block;
-                                      text-align: center;
-                                      vertical-align: text-bottom;
-                                  }
-
-                                  .home2 li {
-                                      display: block;
-                                      margin: 1px;
-                                  }
-
-                             </style>
-
-                <div  class="home2">
-                    <ul>
-                        <li>
-                          <a href="#videos"></a>
-                        </li>
-                    </ul>
-                </div>
-
-                <h1>Green Ideas</h1>
-                <p>slideshow goes here</p>
-
-                @foreach($green as $greenP)
-
-                    <div>{{$greenP->description}}</div>
-
-                @endforeach
-
-                <style>
-
-                      .home3 a {
-                          background-color: transparent;
-                          align-self: right;
-                          display: inline-block;
-                          height: 32px;
-                          width: 54px;
-                          background-image: url("/css/images/down.png");
-                      }
-
-                      .home3 a:hover {
-                          background-color: lightcyan;
-                          opacity: 0.6;
-                      }
-
-                      .home3 ul {
-                          display: inline-block;
-                          text-align: center;
-                          vertical-align: text-bottom;
-                      }
-
-                      .home3 li {
-                          display: block;
-                          margin: 1px;
-                      }
-
-                 </style>
-
-                <div  class="home3">
-                    <ul>
-                        <li>
-                          <a href="#donate"></a>
-                        </li>
-                    </ul>
-                </div>
-
-             </article>
-
-              <article class = 'donate' id = 'donate'>
-
-                <style>
-
-                    .home4 a {
-                        background-color: transparent;
-                        align-self: right;
-                        display: inline-block;
-                        height: 32px;
-                        width: 54px;
-                        background-image: url("/css/images/up.png");
-                    }
-
-                    .home4 a:hover {
-                        background-color: lightcyan;
-                        opacity: 0.6;
-                    }
-
-                    .home4 ul {
-                        display: inline-block;
-                        text-align: center;
-                        vertical-align: text-bottom;
-                    }
-
-                    .home4 li {
-                        display: block;
-                        margin: 1px;
-                    }
-
-                </style>
-                <div  class="home4">
-                    <ul>
-                        <li>
-                          <a href="#green"></a>
-                        </li>
-                    </ul>
-                </div>
-
-                <h1>Donate Online</h1>
-                <p> Some form for donating here</p>
-
-                <style>
-
-                    .home5 a {
-                        background-color: transparent;
-                        align-self: right;
-                        display: inline-block;
-                        height: 32px;
-                        width: 54px;
-                        background-image: url("/css/images/down.png");
-                    }
-
-                    .home5 a:hover {
-                        background-color: lightcyan;
-                        opacity: 0.6;
-                    }
-
-                    .home5 ul {
-                        display: inline-block;
-                        text-align: center;
-                        vertical-align: text-bottom;
-                    }
-
-                    .home5 li {
-                        display: block;
-                        margin: 1px;
-                    }
-
-                </style>
-
-                <div  class="home5">
-                    <ul>
-                        <li>
-                          <a href="#newsfeed"></a>
-                        </li>
-                    </ul>
-                </div>
-             </article>
-
-              <article class = 'newsfeed' id="newsfeed">
-
-                <style>
-
-                .home6 a {
-                  background-color: transparent;
-                  align-self: right;
-                  display: inline-block;
-                  height: 32px;
-                  width: 54px;
-                  background-image: url("/css/images/up.png");
-                }
-
-                .home6 a:hover {
-                  background-color: lightcyan;
-                  opacity: 0.6;
-                }
-
-                .home6 ul {
-                  display: inline-block;
-                  text-align: center;
-                  vertical-align: text-bottom;
-                }
-
-                .home6 li {
-                  display: block;
-                  margin: 1px;
-                }
-
-                </style>
-                <div  class="home6">
-                  <ul>
-                      <li>
-                        <a href="#donate"></a>
-                      </li>
-                  </ul>
-                </div>
-
-                <h1>NewsFeed</h1>
-                <p>implement infinite scrolling here</p>
-
-                @foreach($news as $new)
-
-                    <div>{{$new->content}}</div>
-
-                @endforeach
-
-                <style>
-
-                .home7 a {
-                  background-color: transparent;
-                  align-self: right;
-                  display: inline-block;
-                  height: 32px;
-                  width: 54px;
-                  background-image: url("/css/images/down.png");
-                }
-
-                .home7 a:hover {
-                  background-color: lightcyan;
-                  opacity: 0.6;
-                }
-
-                .home7 ul {
-                  display: inline-block;
-                  text-align: center;
-                  vertical-align: text-bottom;
-                }
-
-                .home7 li {
-                  display: block;
-                  margin: 1px;
-                }
-
-                </style>
-                <div  class="home7">
-                  <ul>
-                      <li>
-                        <a href="#about"></a>
-                      </li>
-                  </ul>
-                </div>
-
-            </article>
-
-              <article class = 'about' id="about">
-
-                    <style>
-
-                        .home8 a {
-                        background-color: transparent;
-                        align-self: right;
-                        display: inline-block;
-                        height: 32px;
-                        width: 54px;
-                        background-image: url("/css/images/up.png");
-                        }
-
-                        .home8 a:hover {
-                        background-color: lightcyan;
-                        opacity: 0.6;
-                        }
-
-                        .home8 ul {
-                        display: inline-block;
-                        text-align: center;
-                        vertical-align: text-bottom;
-                        }
-
-                        .home8 li {
-                        display: block;
-                        margin: 1px;
-                        }
-
-                    </style>
-                    <div  class="home8">
-                    <ul>
-                        <li>
-                          <a href="#newsfeed"></a>
-                        </li>
-                    </ul>
-                    </div>
-
-                   <h1>About Us</h1>
-                   <p>Some sort of description of the activity goes here</p>
-
-                <style>
-
-                .home9 a {
-                  background-color: transparent;
-                  align-self: right;
-                  display: inline-block;
-                  height: 32px;
-                  width: 54px;
-                  background-image: url("/css/images/down.png");
-                }
-
-                .home9 a:hover {
-                  background-color: lightcyan;
-                  opacity: 0.6;
-                }
-
-                .home9 ul {
-                  display: inline-block;
-                  text-align: center;
-                  vertical-align: text-bottom;
-                }
-
-                .home9 li {
-                  display: block;
-                  margin: 1px;
-                }
-
-                </style>
-                <div  class="home9">
-                  <ul>
-                      <li>
-                        <a href="#contact"></a>
-                      </li>
-                  </ul>
-                </div>
-
-             </article>
-
-              <article class = 'contact' id = 'contact'>
-
-                        <style>
-
-                            .home10 a {
-                                background-color: transparent;
-                                align-self: right;
-                                display: inline-block;
-                                height: 32px;
-                                width: 54px;
-                                background-image: url("/css/images/up.png");
-                            }
-
-                            .home10 a:hover {
-                                background-color: lightcyan;
-                                opacity: 0.6;
-                            }
-
-                            .home10 ul {
-                                display: inline-block;
-                                text-align: center;
-                                vertical-align: text-bottom;
-                            }
-
-                            .home10 li {
-                                display: block;
-                                margin: 1px;
-                            }
-
-                        </style>
-                        <div  class="home10">
-                        <ul>
-                            <li>
-                              <a href="#about"></a>
-                            </li>
-                        </ul>
+                     <div class="row">
+                        <div class="col-md-12 text-center">
+                            <h2 class="section-heading">Videos</h2>
                         </div>
+                     </div>
 
-                         <h1>Contact stuff</h1>
-                         <p>Contact info, contact form?</p>
-                 </article>
+                     <div class="row">
+                        <div class="col-md-12">
+                              <article>
 
+                                           <ul class="ch-grid-1">
+                                               <li>
+                                                   <div class="ch-item-1 ch-img">
+                                                       <div class="ch-info-1">
+                                                           <h3>Video te Momentit</h3>
+                                                           <a href="works"><span class="glyphicon glyphicon-play-circle img-circle"></span></a>
+                                                       </div>
+                                                   </div>
+                                               </li>
+
+                                                <li>
+                                                   <div class="ch-item-1 ch-img">
+                                                       <div class="ch-info-1">
+                                                           <h3>Video me Filma</h3>
+                                                       </div>
+                                                   </div>
+                                               </li>
+
+                                               <li>
+                                                  <div class="ch-item-1 ch-img">
+                                                      <div class="ch-info-1">
+                                                          <h3>Video Konferenca</h3>
+                                                      </div>
+                                                  </div>
+                                              </li>
+                                           </ul>
+
+                              </article>
+                          </div>
+                     </div>
+
+                </div>
+            </section>
+
+            <section>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                              <article  class="green" id="green">
+
+                                    <div id="slider1_container" style="position: relative; width: 600px; height: 600px;">
+                                            <!-- Slides Container -->
+                                            <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width:600px; height:300px; overflow: hidden;">
+
+                                                <!-- Slide -->
+                                                @foreach($green as $greenP)
+                                                    <div>
+                                                        <img u="image" src="{{$greenP->image_url}}" />
+                                                        <div u="caption" t="MCLIP|B" style="position: absolute; top: 0px; left: 0px;
+                                                            width:600px; height: 50px;">
+                                                            <div style="position: absolute; top: 0px; left: 0px; width:600px; height: 50px;
+                                                                background-color: Transparent;">
+                                                            </div>
+                                                            <div style="position: absolute; top: 0px; left: 0px; width:600px; height: 50px;
+                                                                color: White; font-size: 16px; font-weight: bold; line-height: 50px; text-align: center;">
+                                                                <h2 class="section-heading">Green Ideas</h2>
+                                                            </div>
+                                                        </div>
+                                                        <div u="caption" t="MCLIP|B" style="position: absolute; top: 250px; left: 0px;
+                                                            width: 600px; height: 50px;">
+                                                            <div style="position: absolute; top: 0px; left: 0px; width:600px; height: 50px;
+                                                                background-color: Black; opacity: 0.5; filter: alpha(opacity=50);">
+                                                            </div>
+                                                            <div style="position: absolute; top: 0px; left: 0px; width:600px; height: 50px;
+                                                                color: White; font-size: 16px; font-weight: bold; line-height: 50px; text-align: center;">
+                                                                {{$greenP->description}}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                @endforeach
+
+                                            </div>
+                                            <link href="{{ asset('css/arrowStyle.css') }}" rel="stylesheet" type="text/css" >
+                                            <!-- Arrow Left -->
+                                            <span u="arrowleft" class="jssora03l" style="top: 123px; left: 8px;">
+                                            </span>
+                                            <!-- Arrow Right -->
+                                            <span u="arrowright" class="jssora03r" style="top: 123px; right: 8px;">
+                                            </span>
+                                            <!--#endregion Arrow Navigator Skin End -->
+                                            <a style="display: none" href="http://www.jssor.com">Carousel Slider</a>
+                                    </div>
+
+                              </article>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="donate" id="donate">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                             <article>
+
+                                <h2 class="section-heading">Donate Online</h2>
+                                <h3 class="section-subheading text-muted"> INSERT donation form here</h3>
+
+                             </article>
+                        </div>
+                     </div>
+                 </div>
+             </section>
+
+            <section  class = 'pre-scrollable newsfeed' id="newsfeed" style="max-height: 500px;">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+
+                              <article>
+
+                                <h2 class="section-heading">Newsfeed</h2>
+
+                                <div id="boxes">
+                                    @foreach($news as $new)
+
+                                        <h3 class="section-subheading"> {{$new->title}}</h3>
+                                        <h5 class="section-subheading"> {{$new->published_at}}</h5>
+                                        <div class="box">{{$new->content}}</div>
+
+                                    @endforeach
+
+                                </div>
+
+                                <a href="newsfeed" role="button" class="btn btn-info btn-lg">More</a><br>
+
+                              </article>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="about" id="about">
+                <div class="row text-center">
+                    <div class="col-md-12">
+                      <article>
+
+                           <h1>About Us</h1>
+                           <p>Some sort of description of the activity goes here</p>
+
+                      </article>
+                    </div>
+                </div>
+              </section>
+
+            <section class="contact"  id="contact">
+                <div class="container-fluid">
+                      <article class = 'contact'>
+                            <div class="row text-center">
+                                 <h1 class="section-heading">Contact Us</h1>
+                            </div>
+
+                            <div class="row text-center">
+                                <div class="col-md-6 center-block">
+                                    @if(Session::has('message'))
+                                        <div class="alert alert-info">
+                                          {{Session::get('message')}}
+                                        </div>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="row text-center">
+                                <div class="col-md-6 center-block">
+                                    {!! Form::open(array('route' => 'contact_store', 'class' => 'form')) !!}
+
+                                    <div class="form-group">
+                                        {!! Form::label('Your Name') !!}
+                                        {!! Form::text('name', null,
+                                            array('required',
+                                                  'class'=>'form-control',
+                                                  'placeholder'=>'Your name')) !!}
+                                    </div>
+
+                                    <div class="form-group">
+                                        {!! Form::label('Your E-mail Address') !!}
+                                        {!! Form::email('email', null,
+                                            array('required',
+                                                  'class'=>'form-control',
+                                                  'placeholder'=>'Your e-mail address')) !!}
+                                    </div>
+
+                                    <div class="form-group">
+                                        {!! Form::label('Your Message') !!}
+                                        {!! Form::textarea('message', null,
+                                            array('required',
+                                                  'class'=>'form-control',
+                                                  'placeholder'=>'Your message')) !!}
+                                    </div>
+
+                                    <div class="form-group">
+                                        {!! Form::submit('Contact Us!',
+                                          array('class'=>'btn btn-primary')) !!}
+                                    </div>
+                                    {!! Form::close() !!}
+                                </div>
+                            </div>
+
+                            <div class="row text-center">
+
+                                 <div class="col-md-12">
+
+                                    <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                      <div class="modal-dialog">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                            <h3 id="myModalLabel">Thank you for the email</h3>
+                                          </div>
+
+                                          <div class="modal-body">
+                                            We will contact you back as soon as possible
+                                          </div>
+
+                                          <div class="modal-footer">
+                                            <button class="btn" data-dismiss="modal" aria-hidden="true">Ok</button>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                 </div>
+                            </div>
+                      </article>
+                </div>
+            </section>
 
 @stop

@@ -1,22 +1,18 @@
-/*
-$(function () {
-    $('a[href*=#]:not([href=#])').click(function() {
+$(function(){
+    $('a[href*=#]:not([href=#]):not([href*=Modal])').click(function() {
         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
             var target = $(this.hash);
             target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
             if (target.length) {
                 $('html,body').animate({
-                    scrollTop: target.offset().top
+                    scrollTop: (target.offset().top - 135) // adjust this according to your content
                 }, 1000);
+
                 return false;
             }
         }
     });
+
 });
-*/
-$('a').click(function(){
-    $('html, body').animate({
-        scrollTop: $( $.attr(this, 'href') ).offset().top
-    }, 500);
-    return false;
-});
+
+//('a[href*=#]:not([href=#]):not([href=#myModal]):not([href=#editModal1]):not([href=#editModal2]):not([href=#editModal3])')
