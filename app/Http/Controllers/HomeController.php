@@ -34,7 +34,7 @@ class HomeController extends Controller
 
     public function works()
     {
-        $vids = Video::paginate(10);
+        $vids = Video::paginate(8);
         return view("works")->with('vids', $vids);
     }
 
